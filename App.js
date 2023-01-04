@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
 
 let nome = 'Colt';
-let img = 'https:sujeitoprogramador.com/steve.png'
+
 
 class App extends Component {
   render() {
@@ -14,16 +14,31 @@ class App extends Component {
         Sujeito Programador
         </Text>
 
-        <Image
-          source={{uri: img}}
-          style={{width: 300, height: 300}}
-          /> 
-
           <Text style = {{fontSize: 30}}> {nome} </Text>
+
+          <Jobs largura = {100} altura={200} fulano="COLT"/>
+
       </View>
     );
   }
 }
 
 export default App;
+
+class Jobs extends Component {
+  render() {
+
+    let img = 'https://sujeitoprogramador.com/steve.png';
+
+    return (
+      <View>
+      <Image
+      source = {{uri: img}}
+      style = {{width: this.props.largura, height: this.props.altura}}
+      />
+      <Text> {this.props.fulano}</Text>
+     </View>
+    );
+  }
+}
 
